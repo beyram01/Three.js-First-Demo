@@ -73,29 +73,6 @@ class BasicWorld {
     this.scene.add(box);
     this.scene.add(sphere);
 
-    // add 3d Text
-    let text;
-    const textLoader = new THREE.FontLoader();
-    textLoader.load(
-      "./fonts/helvetiker_regular.typeface.json",
-      function (font) {
-        const textGeometry = new THREE.TextGeometry("Hello three.js!", {
-          font: font,
-          size: 80,
-          height: 5,
-          curveSegments: 12,
-          bevelEnabled: true,
-          bevelThickness: 10,
-          bevelSize: 8,
-          bevelOffset: 0,
-          bevelSegments: 5,
-        });
-        const textMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
-        text = new THREE.Mesh(textGeometry, textMaterial);
-      }
-    );
-    if (text) this.scene.add(text);
-
     this._RAF();
   }
 
